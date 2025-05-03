@@ -78,7 +78,7 @@ cd EduProctor
 ### Frontend Setup:
 1. Navigate to the frontend folder:
    ```bash
-   cd ../frontend
+   cd ../frontend1
    ```
 2. Install dependencies:
    ```bash
