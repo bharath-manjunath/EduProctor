@@ -1,0 +1,92 @@
+/* Styling for the Result Component */
+.result-card {
+    margin: 20px auto;
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 80%;
+    overflow: hidden; /* Ensures content doesn't overflow the card */
+  }
+  
+  .result-card mat-card-header {
+    background-color: #3498db;
+    color: white;
+    border-radius: 12px 12px 0 0;
+    
+    padding: 15px;
+  }
+  
+  .result-card mat-card-header mat-card-title h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .result-card mat-card-content {
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+  .result-card mat-card-content h1 {
+    font-size: 1.1rem;
+    margin: 15px 0;
+    text-align: center;
+    color: #34495e;
+  }
+  
+  .result-card mat-card-content h1 b {
+    color: #3498db;
+  }
+  
+  .result-card .button-container {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between buttons */
+  }
+  
+  .result-card .button-container button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-transform: capitalize;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    width: 120px; /* Ensures consistent button size */
+  }
+  
+  .result-card .button-container button:hover {
+    background-color: #2980b9;
+    color: white;
+  }
+  
+  .result-card .button-container .color-accent:hover {
+    background-color: #e67e22;
+    color: white;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .result-card {
+      max-width: 90%;
+    }
+  
+    .result-card mat-card-header mat-card-title h1 {
+      font-size: 1.8rem;
+    }
+  
+    .result-card mat-card-content h1 {
+      font-size: 1.2rem;
+    }
+  
+    .result-card .button-container {
+      flex-direction: column; /* Stack buttons vertically on smaller screens */
+      gap: 10px;
+    }
+  }
+  

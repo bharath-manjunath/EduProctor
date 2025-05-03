@@ -1,0 +1,146 @@
+/* General Styling for the Page */
+.mt20 {
+    margin-top: 10px;
+  }
+  
+  .ml20 {
+    margin-left: 10px;
+  }
+  
+  h1 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Styling for the mat-card */
+  mat-card {
+    margin: 15px auto;
+    max-width: 800px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  mat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Styling for mat-card content */
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+  }
+  
+  mat-card-content p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+  
+  /* Styling for Answer and Options */
+  mat-card-content p b {
+    font-weight: bold;
+  }
+  
+  .container-fluid {
+    margin-bottom: 10px;
+  }
+  
+  /* Grid Styling for Question Options */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  
+  .col-md-6 {
+    width: 50%;
+    padding: 5px;
+  }
+  
+  /* Button Styling */
+  button {
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    margin-top: 5px;
+  }
+  
+  button[color="primary"] {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+  }
+  
+  button[color="primary"]:hover {
+    background-color: #357ab7;
+    transform: translateY(-2px);
+  }
+  
+  button[color="accent"] {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+  }
+  
+  button[color="accent"]:hover {
+    background-color: #f50057;
+    transform: translateY(-2px);
+  }
+  
+  /* Add Questions Button Section */
+  .container.text-center {
+    margin-top: 20px;
+  }
+  
+  button[mat-raised-button][color="primary"] {
+    width: 200px;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  button[mat-raised-button][color="primary"]:hover {
+    background-color: #357ab7;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    mat-card {
+      padding: 10px;
+      margin: 10px;
+      max-width: 100%;
+    }
+  
+    .row {
+      flex-direction: column;
+    }
+  
+    .col-md-6 {
+      width: 100%;
+    }
+  
+    button {
+      width: 100%;
+    }
+  
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
+  

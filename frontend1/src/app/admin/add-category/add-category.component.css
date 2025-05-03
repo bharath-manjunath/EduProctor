@@ -1,0 +1,100 @@
+.w100 {
+    width: 100%;
+    /* border-radius: 50px; */
+    
+  }
+  
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  mat-card {
+    margin: 30px auto;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 40px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background: #ffffff7e; /* White background */
+    transition: all 0.3s ease-in-out;
+  }
+
+  mat-card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+   
+  }
+  
+  h1 {
+    font-size: 1.6rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  mat-form-field {
+    margin-bottom: 15px; /* Space between form fields */
+    font-size: 16px;
+    border-radius: 100px;
+   
+  }
+
+  mat-label {
+    color: #555;
+    font-weight: 450;
+  }
+
+  input, textarea {
+    font-size: 16px;
+    color: #333;
+    padding: 5px;
+    border-radius: 2px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease-in-out;
+  }
+
+  input:focus, textarea:focus {
+    border-color: #4a90e2; /* Focus effect */
+    background-color: #fff; /* Background color on focus */
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.3); /* Glow effect */
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    margin: 0 10px;
+  }
+
+  button[color="primary"] {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+  }
+
+  button[color="primary"]:hover {
+    background-color: #357ab7;
+    transform: translateY(-3px); /* Slight lift effect on hover */
+  }
+
+  button[color="accent"] {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+  }
+  
+  button[color="accent"]:hover {
+    background-color: #f50057;
+    transform: translateY(-3px); /* Slight lift effect on hover */
+  }

@@ -1,0 +1,47 @@
+<!-- load-all-results.component.html -->
+<div class="container-fluid">
+    <div class="mt20 ml20">
+      <h1>Results</h1>
+    </div>    
+  
+    <div class="row">
+      <div class="col-md-4" *ngFor="let result of results">
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>
+              <h1>
+                {{ result.examination.title }}
+              </h1>
+            </mat-card-title>
+          </mat-card-header>
+          
+          <mat-card-content>
+            <h1 style="font-size: medium;">Marks Obtained: <b>{{ result.marksScored }}</b></h1>
+            <h1 style="font-size: medium;">Percentage: <b>{{ result.percentage }} %</b></h1>
+            <h1 style="font-size: medium;">Correct Answers: <b>{{ result.correctAnswers }}</b></h1>
+            <h1 style="font-size: medium;">Questions Attempted: <b>{{ result.questionsAttempted }}</b></h1>
+            <h1 style="font-size: medium;">Total Questions: <b>{{ result.examination.numOfQuestions }}</b></h1>
+  
+            <div class="container text-center mt20 mb20">
+              <button (click)="deleteResult(result.resultId)" mat-raised-button color="accent">Delete Result</button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <br>
+        <mat-divider></mat-divider>
+      </div>
+  
+      <div class="col-md-12" *ngIf="results.length === 0">
+        <mat-card> 
+          <mat-card-content>
+            <h1>No Data in the Results</h1>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  
+    <div class="container text-center mt20 mb20">
+      <button [routerLink]="'/userdashboard'" mat-raised-button color="primary">Home</button>
+    </div>
+  </div>
+  

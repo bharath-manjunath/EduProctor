@@ -1,0 +1,131 @@
+/* General Card Styling for Update Examination */
+mat-card {
+    margin: 30px auto;
+    max-width: 800px;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 40px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background: #ffffff7e; /* Semi-transparent background */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  mat-card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  /* Title Styling */
+  h1 {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  /* Form Field Styling */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  mat-form-field mat-label {
+    font-weight: 500;
+    color: #555;
+  }
+  
+  mat-form-field input,
+  mat-form-field textarea,
+  mat-form-field mat-select {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  mat-form-field textarea {
+    resize: vertical;
+  }
+  
+  mat-form-field .mat-form-field-outline {
+    border-color: #4a90e2;
+  }
+  
+  mat-form-field .mat-form-field-outline.mat-focused {
+    border-color: #357ab7;
+  }
+  
+  mat-form-field input:focus,
+  mat-form-field textarea:focus,
+  mat-form-field mat-select:focus {
+    border-color: #357ab7; /* Focused field color */
+  }
+  
+  /* Button Styling */
+  button {
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  button[color="primary"] {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+  }
+  
+  button[color="primary"]:hover {
+    background-color: #357ab7;
+    transform: translateY(-3px); /* Slight lift effect on hover */
+  }
+  
+  /* Dropdown and Checkbox Styling */
+  mat-select {
+    font-size: 16px;
+    padding: 10px;
+  }
+  
+  .mat-option {
+    font-size: 16px;
+  }
+  
+  mat-checkbox {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  mat-checkbox .mat-checkbox-label {
+    font-weight: bold;
+  }
+  
+  mat-checkbox.mat-checked .mat-checkbox-background {
+    background-color: #4caf50;
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 600px) {
+    mat-card {
+      padding: 20px;
+      margin: 15px;
+    }
+  
+    h1 {
+      font-size: 1.6rem;
+    }
+  
+    mat-form-field {
+      margin-bottom: 15px;
+    }
+  
+    button {
+      padding: 10px 20px;
+      width: 100%;
+    }
+  }
+  

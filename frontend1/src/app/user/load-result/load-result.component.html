@@ -1,0 +1,25 @@
+<!-- load-result.component.html -->
+<div class="row mt20 text-center">
+    <div class="col-md-6 offset-md-3">
+      <mat-card class="result-card">
+        <mat-card-header style="text-align: center;">
+          <mat-card-title style="text-align: center;">
+            <h1 >➡️ {{ result.examination.title }} ⬅️</h1>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h1>Marks Scored: <b>{{ result.marksScored }}</b></h1>
+          <h1>Percentage: <b>{{ result.percentage }} %</b></h1>
+          <h1>Correct Answers: <b>{{ result.correctAnswers }}</b></h1>
+          <h1>Questions Attempted: <b>{{ result.questionsAttempted }}</b></h1>
+          <h1>Total Questions: <b>{{ result.examination.numOfQuestions }}</b></h1>
+        </mat-card-content>
+        
+        <div class="button-container">
+          <button (click)="printPage()" mat-raised-button color="primary">Print</button>
+          <button [routerLink]="'/userdashboard'" mat-raised-button color="accent">Home</button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  

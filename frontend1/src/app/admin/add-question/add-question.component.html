@@ -1,0 +1,84 @@
+<div class="container">
+    <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="typeId">Question Type</label>
+        <select id="typeId" class="form-control" formControlName="typeId">
+          <option *ngFor="let type of questionTypes" [value]="type.id">
+            {{ type.name }}
+          </option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="content">Question Content</label>
+        <textarea
+          id="content"
+          class="form-control"
+          formControlName="content"
+          placeholder="Enter the question content"
+          rows="3"
+        ></textarea>
+      </div>
+  
+      <!-- Quiz Type Fields -->
+      <div *ngIf="questionForm.get('typeId')?.value == 1">
+        <div class="form-group" *ngFor="let option of ['option1', 'option2', 'option3', 'option4']; let i = index">
+          <label [for]="'option' + (i + 1)">Option {{ i + 1 }}</label>
+          <input
+            [id]="'option' + (i + 1)"
+            type="text"
+            class="form-control"
+            [formControlName]="'option' + (i + 1)"
+            placeholder="Enter Option {{ i + 1 }}"
+          />
+        </div>
+        <div class="form-group">
+          <label for="quizAnswer">Correct Answer</label>
+          <input id="quizAnswer" type="text" class="form-control" formControlName="quizAnswer" placeholder="Enter the correct answer" />
+        </div>
+      </div>
+  
+      <!-- Fill in the Blank -->
+      <div *ngIf="questionForm.get('typeId')?.value == 2">
+        <div class="form-group">
+          <label for="fillAnswer">Answer</label>
+          <input id="fillAnswer" type="text" class="form-control" formControlName="fillAnswer" placeholder="Enter the answer" />
+        </div>
+      </div>
+  
+      <!-- Short Answer -->
+      <div *ngIf="questionForm.get('typeId')?.value == 3">
+        <div class="form-group">
+          <label for="shortAnswer">Answer</label>
+          <textarea
+            id="shortAnswer"
+            class="form-control"
+            formControlName="shortAnswer"
+            placeholder="Enter the short answer"
+            rows="3"
+          ></textarea>
+        </div>
+      </div>
+  
+      <!-- Essay -->
+      <div *ngIf="questionForm.get('typeId')?.value == 4">
+        <div class="form-group">
+          <label for="essayAnswer">Answer</label>
+          <textarea
+            id="essayAnswer"
+            class="form-control"
+            formControlName="essayAnswer"
+            placeholder="Enter the essay answer"
+            rows="5"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="wordLimit">Word Limit</label>
+          <input id="wordLimit" type="number" class="form-control" formControlName="wordLimit" placeholder="Enter the word limit" />
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="questionForm.invalid">Add Question</button>
+    </form>
+  </div>
+  

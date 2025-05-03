@@ -1,0 +1,39 @@
+<!-- <div class="user-sidebar">
+    <mat-toolbar>EduProctor User</mat-toolbar>
+    <mat-card>
+      <mat-action-list>
+        <div mat-subheader>Menu</div>
+  
+       
+        <button mat-list-item [routerLink]="'/userdashboard'">
+          <mat-icon mat-list-icon>home</mat-icon> Home
+        </button>
+  
+     
+        <button mat-list-item [routerLink]="'/userdashboard/profile'">
+          <mat-icon mat-list-icon>account_circle</mat-icon> Profile
+        </button>
+  
+      
+        <button mat-list-item [routerLink]="'/userdashboard/load-examination/0'">
+          <mat-icon mat-list-icon>school</mat-icon> All Examinations
+        </button>
+  
+       
+        <div mat-subheader><mat-icon mat-list-icon>category</mat-icon> Examination Categories</div>
+        <mat-action-list *ngFor="let c of categories">
+          <button mat-list-item [routerLink]="'/userdashboard/load-examination/' + c.cid">
+            <mat-icon mat-list-icon>folder</mat-icon> {{ c.title }}
+          </button>
+        </mat-action-list>
+  
+      
+        <button mat-list-item [routerLink]="'/userdashboard/load-all-results'">
+          <mat-icon mat-list-icon>assessment</mat-icon> Results
+        </button>
+  
+       
+      </mat-action-list>
+    </mat-card>
+  </div>
+   -->

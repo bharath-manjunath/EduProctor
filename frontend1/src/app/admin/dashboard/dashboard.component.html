@@ -1,0 +1,39 @@
+<div class="sidebar">
+    <mat-toolbar>EduProctor Admin</mat-toolbar>
+    <mat-card>
+      <mat-action-list>
+        <div mat-subheader>Menu</div>
+        <button mat-list-item [routerLink]="'/admin'">
+          <mat-icon mat-list-icon>home</mat-icon> Home
+        </button>
+        <button mat-list-item [routerLink]="'/admin/profile'">
+          <mat-icon mat-list-icon>account_circle</mat-icon> Profile
+        </button>
+        <button mat-list-item [routerLink]="'/admin/categories'">
+          <mat-icon mat-list-icon>list</mat-icon> Categories
+        </button>
+        <button mat-list-item [routerLink]="'/admin/add-category'">
+          <mat-icon mat-list-icon>add_circle_outline</mat-icon> Add Category
+        </button>
+        <button mat-list-item [routerLink]="['/admin/examinations', 0]">
+          <mat-icon mat-list-icon>school</mat-icon> Examinations
+        </button>
+        <button mat-list-item [routerLink]="'/admin/add-examination'">
+          <mat-icon mat-list-icon>add</mat-icon> Add Examination
+        </button>
+      </mat-action-list>
+    </mat-card>
+  </div>
+  
+  <!-- Main content area -->
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+  
+  
+  
+
+
+   <!-- <mat-list-item *ngIf="isLoggedIn" (click)="logout()" class="logout-link">
+            <mat-icon>logout</mat-icon> Logout
+        </mat-list-item> -->

@@ -1,0 +1,58 @@
+<div class="container">
+    <h2>Register</h2>
+    <form (ngSubmit)="register()" #registerForm="ngForm">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" class="form-control" required [(ngModel)]="client.firstName">
+      </div>
+      
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" class="form-control" required [(ngModel)]="client.lastName">
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" required [(ngModel)]="client.email">
+      </div>
+      
+      <div class="form-group">
+        <label for="userName">Username</label>
+        <input type="text" id="userName" name="userName" class="form-control" required [(ngModel)]="client.userName">
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="form-control" required [(ngModel)]="client.password">
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" class="form-control" [(ngModel)]="client.phone">
+      </div>
+      
+      <div class="form-group">
+        <label for="profile">About</label>
+        <input type="text" id="profile" name="profile" class="form-control" [(ngModel)]="client.profile">
+      </div>
+      
+      <div class="form-group">
+        <label for="clientRole">Client Role</label>
+        <select id="clientRole" name="clientRole" class="form-control" [(ngModel)]="client.roleName" required>
+          <option value="User">Student</option>
+          <option value="Admin">Teacher</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="enabled">Enabled</label>
+        <select id="enabled" name="enabled" class="form-control" [(ngModel)]="client.enabled">
+          <option [value]="true">True</option>
+          <option [value]="false">False</option>
+        </select>
+      </div>
+      
+      <button type="submit" class="btn btn-success mt-3">Register</button>
+    </form>
+  </div>
+  

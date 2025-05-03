@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="examination-card">
+          <header>
+            <h1>📜 {{ examination.title }} 📜</h1>
+            <p>✒️ {{ examination.description }} ✒️</p>
+          </header>
+  
+          <section>
+            <h2>ℹ️ Important Instructions ℹ️`</h2>
+            <ul>
+              <li>This examination is designed to evaluate your skills.</li>
+              <li>Complete the examination within <b>{{ examination.duration }} minutes</b>.</li>
+              <li>There are <b>{{ examination.numOfQuestions }} questions</b>.</li>
+              <li>Total marks: <b>{{ examination.maxMarks }}</b>.</li>
+              <li>Each question carries <b>{{ examination.maxMarks / examination.numOfQuestions | number:'1.0-2' }} marks</b>.</li>
+              <li>No negative marking for incorrect answers.</li>
+            </ul>
+          </section>
+  
+          <section>
+            <h2>🅰️ Attempting the Examination 🅰️</h2>
+            <ul>
+              <li>Time starts as soon as you click "Start Examination".</li>
+              <li>You cannot resume the examination once started.</li>
+              <li>Scroll down to navigate between questions.</li>
+              <li>Submit your answers using the "Submit Examination" button.</li>
+              <li>Results will be generated automatically after submission.</li>
+            </ul>
+          </section>
+  
+          <footer class="text-center">
+            <button class="btn btn-primary" (click)="startExamination()">Start Examination</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+  

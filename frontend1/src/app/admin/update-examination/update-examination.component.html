@@ -1,0 +1,78 @@
+<mat-card>
+    <div class="mt20 ml20">
+      <h1>✅ Update Examination ✅</h1>
+    </div>
+    <mat-card-content>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <form (ngSubmit)="updateExamination()">
+              
+              <mat-form-field class="w100" appearance="outline">
+                <mat-label>Enter Title</mat-label>
+                <input
+                  type="text"
+                  name="title"
+                  placeholder="Enter Title here"
+                  [(ngModel)]="examination.title"
+                  matInput
+                  required
+                />
+              </mat-form-field>
+  
+              <mat-form-field class="w100" appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea
+                  name="description"
+                  matInput
+                  placeholder="Enter Description here"
+                  [(ngModel)]="examination.description"
+                  rows="5"
+                  required
+                ></textarea>
+              </mat-form-field>
+  
+              <!-- <mat-form-field class="w100" appearance="outline">
+                <mat-label>Examination Date</mat-label>
+                <input
+                  matInput
+                  type="datetime-local"
+                  [(ngModel)]="examination.examinationDate"
+                  name="examinationDate"
+                  required
+                />
+              </mat-form-field> -->
+  
+              <mat-form-field appearance="outline" class="w100">
+                <mat-label>Publish Status</mat-label>
+                <mat-select [(ngModel)]="examination.active" name="active" required>
+                  <mat-option [value]="true">Active</mat-option>
+                  <mat-option [value]="false">Inactive</mat-option>
+                </mat-select>
+              </mat-form-field>
+  
+              <mat-form-field appearance="outline" class="mt20 w100">
+                <mat-label>Select Category</mat-label>
+                <mat-select
+                  name="catid"
+                  [(ngModel)]="examination.category.cid"
+                  required
+                >
+                  <mat-option *ngFor="let c of categories" [value]="c.cid">
+                    {{ c.title }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+  
+              <div class="container text-center">
+                <button mat-raised-button color="primary" type="submit">
+                  Update Examination
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  

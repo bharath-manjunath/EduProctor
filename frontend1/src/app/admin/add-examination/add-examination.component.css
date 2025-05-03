@@ -1,0 +1,248 @@
+/* General Styles
+.mat-card {
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .col-md-8 {
+    width: 66.66%;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .mat-label {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  .mat-input-element {
+    padding: 10px;
+  }
+  
+  textarea.mat-input-element {
+    resize: vertical;
+  }
+  
+  
+  button.mat-raised-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #1976d2;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  button.mat-raised-button:hover {
+    background-color: #1565c0;
+  }
+  
+  
+  .mat-slide-toggle {
+    margin-top: 20px;
+    display: block;
+    font-weight: 500;
+  }
+  
+ 
+  .mat-select {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .mat-option {
+    font-size: 1rem;
+  }
+  
+ 
+  .mt20 {
+    margin-top: 20px;
+  }
+  
+  .ml20 {
+    margin-left: 20px;
+  }
+  
+  .w100 {
+    width: 100%;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  input[type="text"], textarea, mat-select {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  
+  input:focus, textarea:focus, mat-select:focus {
+    outline: none;
+    border-color: #1976d2;
+  }
+
+
+  mat-checkbox {
+    font-size: 16px;
+    margin-top: 20px; 
+  }
+  
+  mat-checkbox .mat-checkbox-label {
+    font-weight: bold; 
+  }
+  
+  mat-checkbox.mat-checked .mat-checkbox-background {
+    background-color: #4caf50; 
+  }
+  
+
+  
+   */
+
+/* Container Styling for Mat-Card */
+/* General Card Styling */
+mat-card {
+    margin: 30px auto;
+    max-width: 700px; /* Adjusted to match Add Category's card width */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 40px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background: #ffffff7e; /* Semi-transparent background */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  mat-card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  /* Title Styling */
+  h1 {
+    font-size: 1.6rem; /* Adjusted to match Add Category */
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  /* Form Field Styling */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 15px; /* Space between form fields */
+    font-size: 16px;
+    border-radius: 100px; /* Match Add Category's rounded corners */
+  }
+  
+  mat-form-field mat-label {
+    font-weight: 450;
+    color: #555;
+  }
+  
+  mat-form-field input,
+  mat-form-field textarea,
+  mat-form-field mat-select {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  mat-form-field textarea {
+    resize: vertical;
+  }
+  
+  mat-form-field .mat-form-field-outline {
+    border-color: #4a90e2;
+  }
+  
+  mat-form-field .mat-form-field-outline.mat-focused {
+    border-color: #357ab7;
+  }
+  
+  mat-form-field input:focus,
+  mat-form-field textarea:focus,
+  mat-form-field mat-select:focus {
+    border-color: #357ab7; /* Focused field color */
+  }
+  
+  /* Button Container */
+  .button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Button Styling */
+  button {
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    margin: 0 10px;
+  }
+  
+  button[color="primary"] {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+  }
+  
+  button[color="primary"]:hover {
+    background-color: #357ab7;
+    transform: translateY(-3px); /* Slight lift effect on hover */
+  }
+  
+  button[color="accent"] {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+  }
+  
+  button[color="accent"]:hover {
+    background-color: #f50057;
+    transform: translateY(-3px); /* Slight lift effect on hover */
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 600px) {
+    mat-card {
+      padding: 20px;
+      margin: 15px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    mat-form-field {
+      margin-bottom: 15px; /* Reduce bottom margin for smaller screens */
+    }
+  
+    button {
+      padding: 10px 20px; /* Smaller button on mobile */
+      width: 100%; /* Full-width button on mobile */
+    }
+  }
+  

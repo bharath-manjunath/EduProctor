@@ -1,0 +1,100 @@
+/* Sidebar Styling */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0.8);
+    
+}
+
+.sidebar {
+    width: 200px; /* Default width */
+    position: absolute;  /* This should be the height of your navbar */
+    left: 83px;
+    height: calc(100% - 800px);  /* Full height minus navbar height */
+    /* background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.699);
+    border-radius: 80px;
+    transition: width 0.3s ease;  /* Smooth transition when resizing */
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    transform: scaleX(1);
+    
+  }
+  
+  mat-toolbar {
+    width: 200px;
+    
+    height: 50px;
+    color: black;
+    
+    /* background-color: white; */
+    /* left: 80px; */
+    align-items:center; /* !important ensures your style is applied */
+    margin:auto; /* Optional: center it horizontally */
+}
+  
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 200px; 
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.699); /* Adjust for smaller screens */
+    }
+
+    /* .main-content {
+        margin-left: 200px;
+    } */
+  }
+  
+  @media (max-width: 480px) {
+    .sidebar {
+      width: 100px; 
+    }
+
+    /* .main-content {
+        margin-left: 100px;
+    } */
+  }
+  
+  
+  .mat-card {
+    padding: 0;
+    height: 100%;
+    box-shadow: none;
+  }
+  
+  .mat-action-list {
+    padding: 0;
+  }
+  
+  .mat-list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  
+  .main-content {
+    margin-left: 250px; 
+    margin-top: 64px;    
+    padding: 20px;
+    transition: margin 0.3s ease;
+    transform: scaleX(0.8);
+  }
+  
+  
+  @media (max-width: 768px) {
+    .main-content {
+      margin-left: 210px;  
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-content {
+      margin-left: 110px; 
+    }
+  }
+  

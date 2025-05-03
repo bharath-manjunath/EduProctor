@@ -1,0 +1,82 @@
+<div class="mt20 ml20">
+    <h1>📜 Examination: {{ examination?.title }} 📜</h1>
+  </div>
+  
+  <div class="row">
+    <div class="col-md-12">
+      <mat-card *ngFor="let question of questions; let i = index" class="mt20">
+        <mat-card-content>
+          <p>
+            <b>Q.{{ i + 1 }}</b> <span class="ml10">{{ question.content }} ❓</span>
+          </p>
+  
+          <ng-container [ngSwitch]="question.type.typeId">
+            <!-- Quiz Questions -->
+            <div *ngSwitchCase="1" class="container-fluid">
+              <div class="row">
+                <div class="col-md-6">
+                  <p><b>A.</b> {{ question.option1 }}</p>
+                </div>
+                <div class="col-md-6">
+                  <p><b>B.</b> {{ question.option2 }}</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <p><b>C.</b> {{ question.option3 }}</p>
+                </div>
+                <div class="col-md-6">
+                  <p><b>D.</b> {{ question.option4 }}</p>
+                </div>
+              </div>
+              <p><b>Answer:</b> {{ question.answer }} ✅</p>
+            </div>
+  
+            <!-- Fill in the Blank Questions -->
+            <div *ngSwitchCase="2">
+              <p><b>Answer:</b> {{ question.answer }} ✅</p>
+            </div>
+  
+            <!-- Short Answer Questions -->
+            <div *ngSwitchCase="3">
+              <p><b>Answer:</b> {{ question.answer }} ✅</p>
+            </div>
+  
+            <!-- Essay Questions -->
+            <div *ngSwitchCase="4">
+              <p><b>Answer:</b> {{ question.answer }} ✅</p>
+              <p><b>Word Limit:</b> {{ question.wordLimit }}</p>
+            </div>
+  
+            <!-- Default Case -->
+            <div *ngSwitchDefault>
+              <p><b>Answer:</b> {{ question.answer }} ✅</p>
+            </div>
+          </ng-container>
+        </mat-card-content>
+  
+        <mat-card-actions>
+          <button
+            (click)="deleteQuestion(question.id)"
+            class="ml20"
+            mat-flat-button
+            color="accent"
+          >
+            Delete
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+  
+  <!-- Add Questions Section -->
+  <div class="container text-center mt20">
+    <button
+      [routerLink]="'/admin/add-question/' + examination.eid"
+      mat-raised-button
+      color="primary"
+    >
+      Add Questions
+    </button>
+  </div>
+  

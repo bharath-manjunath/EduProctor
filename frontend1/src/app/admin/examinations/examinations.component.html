@@ -1,0 +1,26 @@
+<mat-card class="mt20" *ngFor="let e of examinations">
+    <mat-card-header>
+      <!-- <div mat-card-avatar class="cover" style="background-image:url('{{e.imagefile}}');"></div> -->
+      <mat-card-title>
+        📃 {{e.title}} 📃
+      </mat-card-title>
+      <mat-card-subtitle>
+        {{e.category.title}} 🔨
+      </mat-card-subtitle>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <p [innerHTML]="e.description"></p>
+    </mat-card-content>
+  
+    <mat-card-actions>
+     
+      <button mat-stroked-button color="primary" class="ml20">Total Marks: {{e.maxMarks}}</button>
+      <button mat-stroked-button color="primary" class="ml20">Total Questions: {{e.numOfQuestions}}</button>
+      <button mat-stroked-button color="primary" class="ml20">Publish-status: {{ e.active ? 'Active' : 'Inactive' }}</button>
+      <button [routerLink]="'/admin/questions/' + e.eid" mat-raised-button color="primary">Questions</button>
+      <button [routerLink]="'/admin/update-examination/' + e.eid" mat-flat-button color="primary" >Update</button>
+      <button (click)="deleteExamination(e.eid)" mat-flat-button color="accent" class="ml20">Delete</button>
+    </mat-card-actions>
+  </mat-card>
+  

@@ -1,0 +1,136 @@
+/* General Styling for Load All Results */
+.container-fluid {
+    padding: 20px;
+    background-color: #f4f6f9;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h1 {
+    color: #2c3e50;
+    font-weight: bold;
+  }
+  
+  /* Results Header */
+  .mt20.ml20 h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #34495e;
+    margin-bottom: 30px;
+  }
+  
+  /* Individual Result Card Styling */
+  mat-card {
+    margin: 20px auto;
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  mat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  mat-card-header {
+    background-color: #3498db;
+    color: white;
+    border-radius: 12px 12px 0 0;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  mat-card-title h1 {
+    font-size: 1.1rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  mat-card-content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  mat-card-content h1 {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    color: #2c3e50;
+  }
+  
+  mat-card-content h1 b {
+    color: #e74c3c;
+  }
+  
+  /* Button Styling */
+  .container.text-center button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-transform: capitalize;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .container.text-center button:hover {
+    background-color: #2980b9;
+    color: white;
+  }
+  
+  /* Divider */
+  mat-divider {
+    margin: 10px auto;
+    background-color: #bdc3c7;
+    height: 2px;
+  }
+  
+  /* "No Data in the Results" Card */
+  .col-md-12 mat-card {
+    text-align: center;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .col-md-12 mat-card-content h1 {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  
+  /* Home Button */
+  .container.text-center:last-of-type {
+    margin-top: 30px;
+  }
+  
+  .container.text-center:last-of-type button {
+    background-color: #27ae60;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .container.text-center:last-of-type button:hover {
+    background-color: #2ecc71;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .row .col-md-4 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  
+    mat-card {
+      margin: 15px;
+    }
+  
+    mat-card-title h1 {
+      font-size: 1.1rem;
+    }
+  
+    mat-card-content h1 {
+      font-size: 0.0rem;
+    }
+  }
+  

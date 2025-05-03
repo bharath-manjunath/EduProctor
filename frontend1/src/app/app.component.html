@@ -1,0 +1,27 @@
+
+<div class="container">
+  <header>
+    <nav>
+      <div class="nav-left">
+        <img src="assets/image.png" alt="Icon" />
+        <a routerLink="/" class="brand">EduProctor</a>
+      </div>
+      <div class="nav-right">
+        <ul>
+          <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
+          <li *ngIf="!isLoggedIn"><a routerLink="/register">Register</a></li>
+          <li *ngIf="isLoggedIn"><a (click)="logout()" href="#" class="logout-link"><b>Logout</b> </a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Angular will render routed components here -->
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 EduProctor</p>
+  </footer>
+</div>

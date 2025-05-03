@@ -1,0 +1,57 @@
+<!-- src/app/components/view-categories/view-categories.component.html -->
+<div class="mt20 ml20">
+    <h1>📃 Categories 📃</h1>
+  </div>
+  
+  <mat-card class="mt20" *ngFor="let category of categories">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon mat-list-icon>category</mat-icon>
+        {{ category.title }}
+      </mat-card-title>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <p [innerHTML]="category.description"></p>
+    </mat-card-content>
+  
+    <mat-card-actions>
+      <button 
+        mat-raised-button 
+        color="primary" 
+        [routerLink]="['/admin/examinations', category.cid]">
+        Examinations
+      </button>
+  
+      <button 
+        mat-flat-button 
+        color="primary" 
+        class="ml20" 
+        [routerLink]="['/admin/update-category', category.cid]">
+        Update
+      </button>
+  
+      <button 
+        mat-flat-button 
+        color="accent" 
+        class="ml20" 
+        (click)="category.cid ? deleteCategory(category.cid) : null">
+        Delete
+      </button>
+    </mat-card-actions>
+  </mat-card>
+  
+  <div class="col-md-12" *ngIf="categories.length == 0">
+    <mat-card>
+      <mat-card-content>
+        <h1>No Categories Created</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
+  <div class="container text-center mt20">
+    <button mat-raised-button color="primary" [routerLink]="'/admin/add-category'">
+      Add New Category
+    </button>
+  </div>
+  

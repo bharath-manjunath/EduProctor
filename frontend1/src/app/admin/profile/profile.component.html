@@ -1,0 +1,16 @@
+<div class="profile-container">
+    <h2>🙎 Profile 🙎</h2>
+    <p><strong>🆔 ID:</strong> {{ userDetails.id }}</p>
+    <p><strong>📛 Username:</strong> {{ userDetails.userName }}</p>
+    <p><strong>✉️ Email:</strong> {{ userDetails.email }}</p>
+    <p><strong>🧑 First Name:</strong> {{ userDetails.firstName }}</p>
+    <p><strong>🧑 Last Name:</strong> {{ userDetails.lastName }}</p>
+    <p><strong>📞 Phone:</strong> {{ userDetails.phone }}</p>
+    <p><strong>✅ Enabled:</strong> {{ userDetails.enabled ? 'Yes' : 'No' }}</p>
+    <p><strong>🧑‍🏫 About:</strong> {{ userDetails.profile }}</p>
+    <p><strong>🔨 Role:</strong>
+         <!-- {{ userDetails.clientRole }} -->
+         {{ userDetails.clientRole === 'Admin' ? 'Teacher' : (userDetails.clientRole === 'User' ? 'Student' : userDetails.clientRole) }}
+    </p>
+  </div>
+  

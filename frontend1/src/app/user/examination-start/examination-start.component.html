@@ -1,0 +1,101 @@
+<div class="container-fluid" *ngIf="questions.length !== 0">
+
+    <div class="row">
+  
+      <!-- Instructions Section -->
+      <div class="col-md-2">
+        <mat-card mt20 style="margin-top: 54px; width: 120%;">
+          <mat-card-content style="text-align:justify;">
+            <h3 style="text-align: center;"><b>📜 Instructions 📜</b></h3>
+            <ul>
+              <li>Do not refresh the page.</li>
+              <li>Do not switch the tabs.</li>
+              <li>Do not minimize the window.</li>
+            </ul>
+          </mat-card-content>
+        </mat-card>
+      </div>
+  
+      <!-- Questions Section -->
+      <div class="col-md-8">
+        <ng-container *ngIf="questions">
+          <h1 class="mt20 ml20" style="font-size: 25px;">
+            <b>📝 {{ examination.title }} 📝</b>
+          </h1>
+  
+          <form>
+            <mat-card *ngFor="let q of questions; let i = index" class="mt10">
+              <mat-card-content>
+                <p><b>Q.{{ i + 1 }}</b> <span class="ml10" [innerHTML]="q.content"></span>❓</p>
+                <mat-divider></mat-divider>
+  
+               <!-- Quiz Question (Multiple Choice) -->
+                <div *ngIf="q.type.typeId === 1">
+                    <p>❗Select the correct answer❗</p>
+                    <div *ngFor="let option of [q.option1, q.option2, q.option3, q.option4]; let j = index">
+                    <label>
+                        <input type="radio" [value]="option" [name]="'answer_' + i" [(ngModel)]="q.answer">
+                        &NonBreakingSpace;<b>{{ ['A', 'B', 'C', 'D'][j] }}.</b>&NonBreakingSpace; {{ option }}
+                    </label>
+                    </div>
+                </div>
+  
+                <!-- Fill in the Blank -->
+                <div *ngIf="q.type.typeId === 2">
+                  <p>❗Fill in the blank❗</p>
+                  <input type="text" class="form-control" [(ngModel)]="q.answer" [name]="'answer_' + i" placeholder="Enter your answer">
+                </div>
+  
+                <!-- Short Answer -->
+                <div *ngIf="q.type.typeId === 3">
+                  <p>❗Provide a short answer❗</p>
+                  <textarea class="form-control" rows="3" [(ngModel)]="q.answer" [name]="'answer_' + i" placeholder="Write your answer"></textarea>
+                </div>
+  
+                <!-- Essay -->
+                <div *ngIf="q.type.typeId === 4">
+                  <p>❗Write an essay❗</p>
+                  <textarea class="form-control" rows="8" [(ngModel)]="q.answer" [name]="'answer_' + i" placeholder="Write your essay"></textarea>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </form>
+  
+          <!-- Submit Button -->
+          <div class="container text-center mt20 mb20">
+            <button (click)="submitExamination()" mat-raised-button color="primary">Submit Examination</button>
+          </div>
+        </ng-container>
+      </div>
+  
+      <!-- Timer and Progress Section -->
+      <div class="col-md-2">
+        <mat-card mt20 style="margin-top: 55px; width: 120%;">
+          <mat-card-header>
+            <mat-card-title style="text-align: center;">⏰Progress⏰</mat-card-title>
+            <mat-card-subtitle style="text-align: center;">
+              Quiz will automatically submit when the timer reaches <b>0:0</b>
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <h2 class="text-center">{{ getTimerFormat() }}</h2>
+            <mat-spinner mode="determinate" [value]="(timer / 600) * 100" style="margin: auto"></mat-spinner>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <!-- Timer and Progress Section -->
+   
+  
+    </div>
+  </div>
+  
+  <!-- No Questions Message -->
+  <div class="col-md-12" *ngIf="questions.length === 0">
+    <mat-card>
+      <mat-card-content>
+        <h1>There are no questions in this Quiz.</h1>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  
